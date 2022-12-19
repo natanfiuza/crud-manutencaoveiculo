@@ -308,6 +308,16 @@ return [
         // ],
 
         [
+            'header' => 'Complementos',
+            "can" => 'permissao-admin'
+        ],
+        [
+            'text' => 'Marcas',
+            'url'  => 'marcas/list',
+            'icon' => 'fas fa-fw fa-copyright',
+            "can" => 'permissao-admin'
+        ],
+        [
             'header' => 'account_settings',
             "can" => 'permissao-admin'
         ],

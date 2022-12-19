@@ -47,6 +47,25 @@
 
             </div>
         </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="inputURLImage">
+                    <i class="fas fa-image"></i> Imagem da logo
+                </label>
+                <input type="text" class="form-control  {{ $errors->has('url_image') ? 'is-invalid' : '' }}" id="inputURLImage"
+                    placeholder="URL da logo" name="url_image" value="{{ $marca->url_image }}">
+            </div>
+
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+
+            </div>
+            <div class="form-group col-md-6">
+
+            </div>
+        </div>
 
         <div class="form-row">
             <button type="submit" class="btn btn-secondary mt-2">Salvar</button>

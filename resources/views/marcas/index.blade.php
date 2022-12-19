@@ -44,6 +44,23 @@
                     {{ $errors->first('name') }}
                 </div>
             </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputNome">
+                        <i class="fas fa-image"></i> Logo da marca
+                    </label>
+                    <input type="text" class="form-control  {{ $errors->has('url_image') ? 'is-invalid' : '' }}"
+                        id="inputNome" placeholder="URL da logo" name="url_image" value="{{ old('url_image') }}">
+                </div>
+                <div class="form-group col-md-6">
+
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="text-danger form-group col-md-6">
+                    {{ $errors->first('url_image') }}
+                </div>
+            </div>
 
             <div class="form-row">
 

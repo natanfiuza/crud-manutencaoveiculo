@@ -11,6 +11,9 @@
             <li class="breadcrumb-item active">Veículos</li>
         </ol>
     </div>
+
+
+
 @stop
 
 
@@ -28,41 +31,75 @@
             @csrf
 
             <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputNomeProduto">
-                        <i class="fas fa-edit"></i>Nome do
+                <div class="form-group col-md-3">
+                    <label for="inputPLaca">
+                        <img src="{{ asset('img/plate_ico.svg') }}" width="20" style="margin-top: -5"> Placa
                     </label>
-                    <input type="text" class="form-control  {{ $errors->has('name') ? 'is-invalid' : '' }}"
-                        id="inputNomeProduto" placeholder="Nome da Produto" name="name" value="{{ old('name') }}">
+                    <input type="text" class="form-control  {{ $errors->has('plate') ? 'is-invalid' : '' }} plate"
+                        id="inputPLaca" placeholder="AAA 0A00" name="plate" value="{{ old('plate') }}"
+                        style="width:11em">
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-9">
                     <label for="inputPrice">
-                        <i class="fas fa-dollar-sign"></i> Preço
+                        <i class="fas fa-car-alt"></i> Modelo
                     </label>
-                    <input type="currency" class="form-control  {{ $errors->has('price') ? 'is-invalid' : '' }}"
-                        id="inputPrice" placeholder="0,00" name="email" value="{{ old('price') }}">
+                    <input type="text" class="form-control  {{ $errors->has('model') ? 'is-invalid' : '' }}"
+                        id="inputPrice" placeholder="Modelo" name="model" value="{{ old('model') }}">
                 </div>
             </div>
             <div class="form-row">
                 <div class="text-danger form-group col-md-6">
-                    {{ $errors->first('name') }}
+                    {{ $errors->first('plate') }}
                 </div>
             </div>
             <div class="form-row">
                 <div class="text-danger form-group col-md-6">
-                    {{ $errors->first('email') }}
+                    {{ $errors->first('model') }}
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
+                    <label for="inputVersion">
+                        <i class="fas fa-audio-description"></i> Versão
+                    </label>
+                    <input type="text" class="form-control  {{ $errors->has('version') ? 'is-invalid' : '' }} "
+                        id="inputVersion" placeholder="Versão" name="versionr" value="{{ old('version') }}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputYear">
+                        <i class="fas fa-calendar-alt"></i> Ano
+                    </label>
+                    <input type="text" class="form-control  {{ $errors->has('year') ? 'is-invalid' : '' }} year"
+                        id="inputYear" placeholder="9999" name="year" value="{{ old('year') }}" style="width:6em">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="text-danger form-group col-md-6">
+                    {{ $errors->first('version') }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="text-danger form-group col-md-6">
+                    {{ $errors->first('year') }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputNote">
+                       <i class="fas fa-info"></i> Observações
+                    </label>
+                    <textarea class="form-control  {{ $errors->has('note') ? 'is-invalid' : '' }} year" id="inputNote"
+                        placeholder="Observações" name="note">
+                        {{ old('note') }}
+                    </textarea>
 
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputMarca">
                         <i class="fas fa-copyright"></i> Marca
                     </label>
-                    <select class="form-select form-control select2 select2-danger" data-dropdown-css-class="select2-danger"
-                        id="marca_id" name="marca_id" style="width: 100%;">
+                    <select class=" selectpicker form-control " data-dropdown-css-class="select2-danger" id="marca_id"
+                        name="marca_id" style="width: 100%;">
                         <option selected="selected" disabled>Selecione uma marca...
                         </option>
                         @foreach ($marcas as $marca)
@@ -74,7 +111,7 @@
             </div>
             <div class="form-row">
                 <div class="text-danger form-group col-md-6">
-                    {{ $errors->first('categoria_id') }}
+                    {{ $errors->first('note') }}
                 </div>
             </div>
             <div class="form-row">
@@ -98,8 +135,8 @@
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/jquery-mask/jquery.mask.min.js') }}"></script>
     <script>
-        $(".cnpj").mask('00.000.000/0000-00')
-        $('.phone').mask('(00) 00000-0000');
+        $(".plate").mask('AAA AAAA')
+        $(".year").mask('0000')
     </script>
 
 @stop
