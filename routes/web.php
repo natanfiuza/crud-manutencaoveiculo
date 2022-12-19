@@ -26,11 +26,10 @@ Route::get('/', function () { // Abre o login no root
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
 // Produtos
-Route::controller(App\Http\Controllers\ProdutoController::class)
-->prefix('produtos')
-->name('produtos.')
+Route::controller(App\Http\Controllers\VeiculoController::class)
+->prefix('veiculos')
+->name('veiculos.')
 ->group(function () {
     Route::get('/list', 'index')->name('list');
     Route::get('/create', 'create')->name('create');
@@ -38,17 +37,7 @@ Route::controller(App\Http\Controllers\ProdutoController::class)
     Route::get('/edit/{id}', 'edit')->name('edit');
     Route::put('/edit/{id}', 'update')->name('update');
 });
-// Categorias
-Route::controller(App\Http\Controllers\CategoriaController::class)
-->prefix('categorias')
-->name('categorias.')
-->group(function () {
-    Route::get('/list', 'index')->name('list');
-    Route::get('/create', 'create')->name('create');
-    Route::post('/register', 'store')->name('store');
-    Route::get('/edit/{id}', 'edit')->name('edit');
-    Route::put('/edit/{id}', 'update')->name('update');
-});
+
 // Marcas
 Route::controller(App\Http\Controllers\MarcaController::class)
 ->prefix('marcas')
@@ -60,7 +49,7 @@ Route::controller(App\Http\Controllers\MarcaController::class)
     Route::get('/edit/{id}', 'edit')->name('edit');
     Route::put('/edit/{id}', 'update')->name('update');
 });
-// Marcas
+// Usuarios
 Route::controller(App\Http\Controllers\UserController::class)
 ->prefix('usuarios')
 ->name('usuarios.')

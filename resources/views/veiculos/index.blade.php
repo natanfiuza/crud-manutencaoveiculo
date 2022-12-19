@@ -7,7 +7,7 @@
         <h1 class="m-0 text-dark mb-4">Cadastrar Produto</h1>
 
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('produtos.list') }}">Cadastro</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('veiculos.list') }}">Cadastro</a></li>
             <li class="breadcrumb-item active">Produtos</li>
         </ol>
     </div>
@@ -23,14 +23,14 @@
                 </h3>
             </div>
         </div>
-        <form action={{ route('produtos.store') }} method="POST" class="form-fluid p-4 rounded shadow"
+        <form action={{ route('veiculos.store') }} method="POST" class="form-fluid p-4 rounded shadow"
             style="background: white;">
             @csrf
 
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputNomeProduto">
-                        <i class="fas fa-edit"></i>Nome da Produto
+                        <i class="fas fa-edit"></i>Nome do
                     </label>
                     <input type="text" class="form-control  {{ $errors->has('name') ? 'is-invalid' : '' }}"
                         id="inputNomeProduto" placeholder="Nome da Produto" name="name" value="{{ old('name') }}">
@@ -55,19 +55,7 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputCategoria">
-                        <i class="fas fa-tags"></i> Categoria
-                    </label>
-
-                    <select class="form-select form-control select2 select2-danger" data-dropdown-css-class="select2-danger"
-                        id="categoria_id" name="categoria_id" style="width: 100%;">
-                        <option selected="selected" disabled>Selecione uma categoria...
-                        </option>
-                        @foreach ($categorias as $categoria)
-                            <option value="{{ $categoria->id }}" {{ old('em') == $categoria->id ? 'selected' : '' }}>
-                                {{ $categoria->name }}</option>
-                        @endforeach
-                    </select>
+               
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputMarca">
@@ -100,7 +88,7 @@
                 <button type="submit" class="btn btn-secondary btn-md">Cadastrar</button>
 
 
-                <a class="ml-3" href="{{ route('produtos.list') }}"><button type="button"
+                <a class="ml-3" href="{{ route('veiculos.list') }}"><button type="button"
                         class="btn btn-danger btn-md ">Voltar</button></a>
 
             </div>

@@ -14,8 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function ($table) {
-            $table->uuid('uuid')->comment('Chave uuid para identificação unica do usuario.')
-            ->after('typeuser_id');
+            $table->uuid('uuid')
+                ->nullnable()
+                ->comment('Chave uuid para identificação unica do usuario.')
+                ->after('typeuser_id');
         });
     }
 

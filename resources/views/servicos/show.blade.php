@@ -4,11 +4,11 @@
 
 @section('content_header')
     <div class="d-flex row justify-content-between">
-        <h1 class="m-0 text-dark mb-4">Lista de marcas</h1>
+        <h1 class="m-0 text-dark mb-4">Lista de serviços</h1>
 
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-            <li class="breadcrumb-item active">Marca</li>
+            <li class="breadcrumb-item active">Serviço</li>
         </ol>
     </div>
 @stop
@@ -16,9 +16,9 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h1 class="card-title text-bold text-lg">Marcas</h1>
+            <h1 class="card-title text-bold text-lg">Serviços</h1>
             <div class="card-tools">
-                <a href={{ route('marcas.create')}} class="btn btn-success col fileinput-button dz-clickable">
+                <a href={{ route('servicos.create')}} class="btn btn-success col fileinput-button dz-clickable">
                     <i class="fas fa-plus"></i>
                     <span>Novo</span>
                 </a>
@@ -31,10 +31,7 @@
                         <th style="width: 1%">
                             Id
                         </th>
-                        <th style="width: 9%">
-                            <i class="fas fa-image"></i>
-                        </th>
-                        <th style="width: 70%">
+                        <th style="width: 79%">
                             Nome
                         </th>
 
@@ -44,21 +41,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($marcas as $marca)
+                    @foreach ($servicos as $servico)
                         <tr>
                             <td>
-                                {{ $marca->id }}
+                                {{ $servico->id }}
                             </td>
                             <td>
-                                <img src="{{ $marca->url_image }}" width="20">
-                            </td>
-                            <td>
-                                {{ $marca->name }}
+                                {{ $servico->name }}
 
                             </td>
 
                             <td class="project-actions">
-                                    <a class="btn btn-secondary btn-sm" href="{{ route('marcas.edit', $marca->id) }}">
+                                    <a class="btn btn-secondary btn-sm" href="{{ route('servicos.edit', $servico->id) }}">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Edit

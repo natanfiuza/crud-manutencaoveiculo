@@ -20,9 +20,9 @@ class PrivilegioSeeder extends Seeder
         DB::table('privilegios')->truncate();
         Schema::enableForeignKeyConstraints();
         \App\Models\Privilegio::insert([
-            ["id" => 1, "name" => 'Cadastro de Categorias',],
-            ["id" => 2, "name" => 'Cadastro de Marcas',],
-            ["id" => 3, "name" => 'Cadastro de Produtos',],
+            ["id" => 1, "name" => 'Cadastro de Veiculos',],
+            ["id" => 2, "name" => 'Registro de Manutenção',],
+
         ]);
     }
 }

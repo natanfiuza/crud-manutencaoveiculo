@@ -4,11 +4,11 @@
 
 @section('content_header')
     <div class="d-flex row justify-content-between">
-        <h1 class="m-0 text-dark mb-4">Lista de produtos</h1>
+        <h1 class="m-0 text-dark mb-4">Lista de veículos</h1>
 
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-            <li class="breadcrumb-item active">Produtos</li>
+            <li class="breadcrumb-item active">Veículos</li>
         </ol>
     </div>
 @stop
@@ -16,9 +16,9 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h1 class="card-title text-bold text-lg">Produtos</h1>
+            <h1 class="card-title text-bold text-lg">Veículos</h1>
             <div class="card-tools">
-                <a href={{ route('produtos.create')}} class="btn btn-success col fileinput-button dz-clickable">
+                <a href={{ route('veiculos.create')}} class="btn btn-success col fileinput-button dz-clickable">
                     <i class="fas fa-plus"></i>
                     <span>Novo</span>
                 </a>
@@ -31,14 +31,11 @@
                         <th style="width: 1%">
                             Id
                         </th>
-                        <th style="width: 20%">
+                        <th style="width: 39%">
                             Nome
                         </th>
                         <th style="width: 20%">
-                            Preço
-                        </th>
-                        <th style="width: 20%">
-                            Categoria
+                            Placa
                         </th>
                         <th style="width: 20%">
                             Marca
@@ -49,26 +46,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($produtos as $produto)
+                    @foreach ($veiculos as $veiculo)
                         <tr>
                             <td>
-                                {{ $produto->id }}
+                                {{ $veiculo->id }}
                             </td>
                             <td>
-                                {{ $produto->name }}
+                                {{ $veiculo->name }}
 
                             </td>
                             <td>
-                                {{ $produto->price }}
+                                {{ $veiculo->plate }}
                             </td>
-                            <td class="project_progress">
-                                {{ $produto->categoria->name }}
-                            </td>
-                            <td class="project_progress">
-                                {{ $produto->marca->name }}
+                            <td>
+                                {{ $veiculo->marca->name }}
                             </td>
                             <td class="project-actions">
-                                    <a class="btn btn-secondary btn-sm" href="{{ route('produtos.edit', $produto->id) }}">
+                                    <a class="btn btn-secondary btn-sm" href="{{ route('veiculos.edit', $veiculo->id) }}">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Edit
