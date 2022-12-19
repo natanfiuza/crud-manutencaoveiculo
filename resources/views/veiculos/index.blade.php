@@ -4,11 +4,11 @@
 
 @section('content_header')
     <div class="d-flex row justify-content-between">
-        <h1 class="m-0 text-dark mb-4">Cadastrar Produto</h1>
+        <h1 class="m-0 text-dark mb-4">Cadastrar Veículo</h1>
 
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('veiculos.list') }}">Cadastro</a></li>
-            <li class="breadcrumb-item active">Produtos</li>
+            <li class="breadcrumb-item active">Veículos</li>
         </ol>
     </div>
 @stop
@@ -55,7 +55,7 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-               
+
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputMarca">
