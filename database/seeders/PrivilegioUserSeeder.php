@@ -22,7 +22,6 @@ class PrivilegioUserSeeder extends Seeder
         \App\Models\PrivilegioUser::insert([
             [ "user_id" => 2, "privilegio_id" => 1],
             [ "user_id" => 2, "privilegio_id" => 2],
-            [ "user_id" => 2, "privilegio_id" => 3],
             [ "user_id" => 1, "privilegio_id" => 1],
             [ "user_id" => 1, "privilegio_id" => 2],
         ]);

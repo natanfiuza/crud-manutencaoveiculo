@@ -51,23 +51,14 @@ class AppServiceProvider extends ServiceProvider
                         'header' => 'Cadastros',
                 ]) : null;
             (!Auth::user()->is_admin() && PrivilegioUser::where('privilegio_id', 1)->where('user_id', Auth::user()->id)->exists()) ? $event->menu->add([
-                'text'        => 'Categoria',
-                'url'         => 'categorias/list',
-                'icon'        => 'fas fa-tags',
+                'text'        => 'Veículos',
+                'url'         => 'veiculos/list',
+                'icon'        => 'fas fa-car-side',
             ]) : null;
             (!Auth::user()->is_admin() && PrivilegioUser::where('privilegio_id', 2)->where('user_id', Auth::user()->id)->exists()) ? $event->menu->add([
-
-                'text'        => 'Marcas',
-                'url'         => 'marcas/list',
-                'icon'        => 'far fa-fw fa-copyright',
-
-            ]) : null;
-            (!Auth::user()->is_admin() && PrivilegioUser::where('privilegio_id', 3)->where('user_id', Auth::user()->id)->exists()) ? $event->menu->add([
-
-                'text'        => 'Produtos',
-                'url'         => 'produtos/list',
-                'icon'        => 'fas fa-fw fa-cube',
-
+                'text'        => 'Manutenções',
+                'url'         => 'manutencoes/list',
+                'icon'        => 'fas fa-fw fa-wrench',
             ]) : null;
         });
     }
