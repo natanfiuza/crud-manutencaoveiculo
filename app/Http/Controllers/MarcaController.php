@@ -28,7 +28,7 @@ class MarcaController extends Controller
 
         $categoria = new Marca();
         $categoria->name = $request->name;
-
+        $categoria->url_image = $request->url_image;
 
         $categoria->save();
 
@@ -50,6 +50,7 @@ class MarcaController extends Controller
     {
         $marca = Marca::findOrFail($id);
         $marca->name = $request->name;
+        $marca->url_image = $request->url_image;
 
         $marca->save();
 

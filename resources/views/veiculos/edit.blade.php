@@ -30,10 +30,10 @@
 
             <div class="form-group col-md-6">
                 <label for="inputPlaca">
-                    <i class="far fa-address-card"></i> Placa
+                    <img src="{{ asset('img/plate_ico.svg') }}" width="20" style="margin-top: -5"> Placa
                 </label>
                 <input type="text" class="form-control  {{ $errors->has('plate') ? 'is-invalid' : '' }} plate"
-                    id="inputPlaca" placeholder="Placa" name="plate" value="{{ $veiculo->plate }}">
+                    id="inputPlaca" placeholder="AAA 0A00" name="plate" value="{{ $veiculo->plate }}">
             </div>
             <div class="form-group col-md-6">
                 <label for="inputCategoria">
